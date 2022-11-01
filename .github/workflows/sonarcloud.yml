@@ -26,7 +26,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          args: -Dsonar.projectKey=templatenathan_template
+          args: -Dsonar.projectKey=testdiffprojectkey
             -Dsonar.projectName=newtestatm
             -Dsonar.organization=template
             -Dsonar.javascript.coveragePlugin=lcov
