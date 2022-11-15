@@ -11,11 +11,10 @@ terraform {
 
 provider "sonarcloud" {
   organization = "template"
-  token        = ${{ secrets.SONAR_TOKEN }}
 }
 
-resource "template" "abcde" {
-  key        = "abcde"
-  name       = "abcde"
+resource "sonarcloud_project" "example_project" {
+  key        = "my-unique-project-keyasdf"
+  name       = "My not-unique project nameasdf"
   visibility = "public"
 }
