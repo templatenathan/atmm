@@ -1,5 +1,3 @@
-variable token {}
-
 terraform {
   required_providers {
     sonarcloud = {
@@ -7,10 +5,14 @@ terraform {
       version = "0.2.1"
     }
   }
-}
 
-provider "sonarcloud" {
-  organization = "template"
+  cloud {
+    organization = "templatenathan"
+
+    workspaces {
+      name = "templatenathan"
+    }
+  }
 }
 
 resource "sonarcloud_project" "example_project" {
