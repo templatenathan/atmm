@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: hashicorp/setup-terraform@v2
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: npm i
@@ -26,8 +27,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         with:
-          args: -Dsonar.projectKey=testdiffprojectkey
-            -Dsonar.projectName=newtestatm
+          args: -Dsonar.projectKey=abcde
+            -Dsonar.projectName=abcde
             -Dsonar.organization=template
             -Dsonar.javascript.coveragePlugin=lcov
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
